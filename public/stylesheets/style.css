@@ -1,6 +1,10 @@
+
+@import url(//db.onlinewebfonts.com/c/2c9987468cbccf69153556019b8c5a94?family=FK+Grotesk+Monospaced);
+@font-face {font-family: "FK Grotesk Monospaced"; src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot"); src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff") format("woff"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.svg#FK Grotesk Monospaced") format("svg"); }
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
 }
 
 a {
@@ -41,3 +45,6 @@ img{
 width: 70%;
 
 }
+
+
+
