@@ -1,8 +1,9 @@
 const router = require("express").Router()
 
-const User = require('./../models/user.model')
+const User = require('./../models/User.model')
 
 const { checkLoggedUser, checkRoles } = require('./../middleware')
+
 
 router.get('/mi-perfil', checkLoggedUser, (req, res) => {
     const loggedUser = req.session.currentUser
@@ -53,5 +54,8 @@ router.post('/editar', checkLoggedUser, checkRoles('PM'), (req, res) => {
         .then(() => res.redirect('/students'))
         .catch(err => console.log(err))
 })
+
+
+
 module.exports = router
 

@@ -5,13 +5,18 @@ const userSchema = new Schema(
   {
     username: { type: String, unique: true },
     name: String,
+    lastName: String,
     password: String,
+    nid: String,
+    tid: {
+      type: String,
+      enum: ['DNI', 'NIE', 'PASSPORT'],
+    },
     profileImg: String,
-    description: String,
     role: {
       type: String,
-      enum: ['STUDENT', 'PM', 'DEV', 'TA'],
-      default: 'STUDENT'
+      enum: ['USER', 'ADMIN'],
+      default: 'USER'
     }
   },
   {

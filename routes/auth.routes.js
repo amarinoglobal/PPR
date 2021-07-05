@@ -1,15 +1,14 @@
 const router = require("express").Router()
 const bcrypt = require('bcrypt')
 
-const User = require('./../models/user.model')
-
+const User = require('./../models/User.model')
 
 // Signup
 router.get('/registro', (req, res) => res.render('auth/signup-page'))
 
 router.post('/registro', (req, res) => {
 
-    const { username, pwd, name, description, profileImg } = req.body
+    const { username, name, lastname, pwd, nid, tid, profileImg, role } = req.body
 
     User
         .findOne({ username })
@@ -25,7 +24,7 @@ router.post('/registro', (req, res) => {
             const hashPass = bcrypt.hashSync(pwd, salt)
 
             User
-                .create({ username, password: hashPass, name, description, profileImg })
+                .create({ username, name, lastname, password: hashPass, nid, tid, profileImg, role })
                 .then(() => res.redirect('/'))
                 .catch(err => console.log(err))
 
