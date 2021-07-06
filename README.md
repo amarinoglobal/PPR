@@ -19,20 +19,21 @@
 ID	    Path	                Description
 1	    /                           Index
 2	    /registro	                Registra nuevo usuario
-3	    /iniciar-sesión	        Inicio de sesión de usuario
+3	    /iniciar-sesión	            Inicio de sesión de usuario
 4	    /perfil                     Mi perfil
 5	    /perfil-editar              Editar perfil
 6	    /perfil-borrar              Borrar perfil
-7	    /almacen-registro           Crear nuevo almacen
-8	    /almacen-editar             Editar almacen
-9	    /almacen-borrar             Borrar almacen
-10	    /almacen-ubicación          Ubicación almacen
+        /almacenes                  Lista de almacenes
+7	    /almacenes/registrar        Crear nuevo almacen
+8	    /almacenes/:id/editar       Editar almacen
+9	    /almacenes/borrar/:id       Borrar almacen
+10	    /almacenes/ubicación        Ubicación almacen
 11	    /equipamiento-registro      Crear nuevo equipamiento
 12	    /equipamiento-editar        Editar equipamiento
 13	    /equipamiento-borrar        Borrar equipamiento
 14	    /equipamiento-ubicación     Ubicación equipamiento
-14	    /envío-registro	        Crear nuevo envío
-15	    /envío-status	        Status del envío (aprobado,pendiente..)
+14	    /envío-registro	            Crear nuevo envío
+15	    /envío-status	            Status del envío (aprobado,pendiente..)
 16	    /envío-ubicación            Muestra lista de material y cantidad
 
 ```
