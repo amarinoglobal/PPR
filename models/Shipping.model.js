@@ -25,7 +25,6 @@ const shippingSchema = new Schema({
         type: { type: String }, coordinates: [Number]
     }
 },
-
     {
         timestamps: true
     })
