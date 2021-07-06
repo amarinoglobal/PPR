@@ -1,0 +1,25 @@
+<div class="container">
+
+    <h2>Envíos</h2> <a href="/envios/registrar" class="btn btn-dark">Registrar nuevo envío</a>
+    <hr>
+
+    <div class="row">
+
+        {{#each shipping}}
+        <div class="col-6">
+
+            <h2 align="center"> {{status}}</h2>
+
+
+            <p align="center">
+                <a class="btn btn-dark" href="/envios/detalles/{{id}}">Detalles</a>
+                <a class="btn btn-dark" href="/envios/{{id}}/editar">Editar</a>
+                <a class="btn btn-dark" href="/envios/borrar/{{id}}">Borrar</a>
+            </p>
+            <br><br><br><br>
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>

@@ -1,7 +1,8 @@
 const router = require("express").Router()
 const User = require('./../models/User.model')
 const Warehouse = require('./../models/Warehouse.model')
-
+const { checkLoggedUser, checkRoles } = require('./../middleware')
+// const bcrypt = require('bcrypt')
 
 //Register Warehouse
 
@@ -9,19 +10,16 @@ router.get('/', (req, res, next) => {
 
     Warehouse
         .find({ owner: req.session.currentUser })
-        // .then(warehouse => res.render('/movies', { movies }))
-
+        .then(warehouse => res.render('warehouse/warehouse', { warehouse }))
         .catch(err => console.log(err))
 })
 
-router.get('/registro-almacen', (req, res) => res.render('warehouse/new-warehouse'))
+router.get('/registrar', checkLoggedUser, (req, res) => res.render('warehouse/new-warehouse'))
 
-router.post('/registro-almacen', (req, res) => {
+router.post('/registrar', (req, res) => {
 
 
     const { name, lat, lng } = req.body
-
-    console.log('EL ALMACEN', req.body)
 
     const location = {
         type: 'Point',
@@ -30,8 +28,7 @@ router.post('/registro-almacen', (req, res) => {
 
     Warehouse
         .create({ name, owner: req.session.currentUser, location })
-        // .then(() => res.redirect('/warehouse'))
-        .then(() => res.send(req.body))
+        .then(() => res.redirect('/almacenes'))
         .catch(err => console.log(err))
 
 })
@@ -50,15 +47,40 @@ router.get('/:warehouse_id/editar', (req, res) => {
 
     const { warehouse_id } = req.params
 
-    Movie
+    Warehouse
         .findById(warehouse_id)
-        .then(movies => res.render('warehouse/edit-warehouse', warehouse))
+        .then(warehouse => res.render('warehouse/edit-warehouse', warehouse))
 
         .catch(err => console.log(err))
 
 
 })
 
+router.post('/:warehouse_id/editar', (req, res) => {
+
+    const { warehouse_id } = req.params
+    const { name, lat, lng } = req.body
+
+    const location = {
+        type: 'Point',
+        coordinates: [lat, lng]
+    }
+
+    Warehouse
+        .findByIdAndUpdate(warehouse_id, { name, lat, lng })
+        .then(() => res.redirect('/almacenes'))
+        .catch(err => console.log(err))
+})
+
+router.get('/borrar/:warehouse_id', (req, res) => {
+
+    const { warehouse_id } = req.params
+
+    Warehouse
+        .findByIdAndRemove(warehouse_id)
+        .then(() => res.redirect('/almacenes'))
+        .catch(err => console.log(err))
+})
 
 
 

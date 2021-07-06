@@ -4,17 +4,26 @@
 
         <div class="col-md-6">
 
-            <h1>Nuevo almacen</h1>
+            <h1>Nuevo envío</h1>
 
             <hr>
 
-            <form action="/almacenes/registrar" method="POST">
+            <form action="/envios/registrar" method="POST">
 
                 <div class="form-group">
-                    <label for="name">Nombre almacen</label>
-                    <input type="text" class="form-control" name="name" id="name">
+                    <label for="date">Fecha de envío</label>
+                    <input type="date" class="form-control" name="date" id="date">
                 </div>
+                <div class="form-group">
+                    <label for="warehouse">Reparto</label>
 
+                    <select name="warehouse" id="warehouse" class="form-control">
+                        <option value="">Almacen</option>
+                        {{#each warehouse}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="lat">Longitud</label>
                     <input type="text" class="form-control" name="lat" id="lat">

@@ -11,7 +11,8 @@ const shippingSchema = new Schema({
     status: {
 
         type: String,
-        enum: ['APROBADO', 'PENDIENTE', 'RECHAZADO']
+        enum: ['APROBADO', 'PENDIENTE', 'RECHAZADO'],
+        dafault: 'PENDIENTE'
     },
     equipment: [{
         type: mongoose.Schema.Types.ObjectId,
