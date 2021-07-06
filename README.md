@@ -17,24 +17,24 @@
 ***
 ```
 ID	    Path	                Description
-1	    /                           Index
-2	    /registro	                Registra nuevo usuario
-3	    /iniciar-sesión	            Inicio de sesión de usuario
-4	    /perfil                     Mi perfil
-5	    /perfil-editar              Editar perfil
-6	    /perfil-borrar              Borrar perfil
-        /almacenes                  Lista de almacenes
-7	    /almacenes/registrar        Crear nuevo almacen
-8	    /almacenes/:id/editar       Editar almacen
-9	    /almacenes/borrar/:id       Borrar almacen
-10	    /almacenes/ubicación        Ubicación almacen
-11	    /equipamiento-registro      Crear nuevo equipamiento
-12	    /equipamiento-editar        Editar equipamiento
-13	    /equipamiento-borrar        Borrar equipamiento
-14	    /equipamiento-ubicación     Ubicación equipamiento
-14	    /envío-registro	            Crear nuevo envío
-15	    /envío-status	            Status del envío (aprobado,pendiente..)
-16	    /envío-ubicación            Muestra lista de material y cantidad
+ff	    /                           Index
+V	    /registro                   Registra nuevo usuario
+V	    /iniciar-sesión             Inicio de sesión de usuario
+ff	    /perfil                     Mi perfil
+ff	    /perfil-editar              Editar perfil
+ff	    /perfil-borrar              Borrar perfil
+V	    /almacenes                  Lista de almacenes
+V	    /almacenes/registrar        Crear nuevo almacen
+V	    /almacenes/:id/editar       Editar almacen
+V	    /almacenes/borrar/:id       Borrar almacen
+ff	    /almacenes/ubicación        Ubicación almacen
+ff	    /equipamiento-registro      Crear nuevo equipamiento
+ff	    /equipamiento-editar        Editar equipamiento
+ff	    /equipamiento-borrar        Borrar equipamiento
+ff	    /equipamiento-ubicación     Ubicación equipamiento
+ff	    /envío-registro             Crear nuevo envío
+ff	    /envío-status               Status del envío (aprobado,pendiente..)
+ff	    /envío-ubicación            Muestra lista de material y cantidad
 
 ```
 ***
