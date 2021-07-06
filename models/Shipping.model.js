@@ -21,7 +21,7 @@ const shippingSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Warehouse'
     },
-    destination: {
+    location: {
         type: { type: String }, coordinates: [Number]
     }
 },

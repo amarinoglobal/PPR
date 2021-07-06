@@ -10,18 +10,17 @@ router.get('/registro-almacen', (req, res) => res.render('warehouse/new-warehous
 router.post('/registro-almacen', (req, res) => {
 
 
-    const { name, owner, lat, lng } = req.body
+    const { name, lat, lng } = req.body
+
+    console.log('EL ALMACEN', req.body)
 
     const location = {
         type: 'Point',
         coordinates: [lat, lng]
-
-
-
     }
 
     Warehouse
-        .create({ name, owner, location })
+        .create({ name, owner: req.session.currentUser, location })
         // .then(() => res.redirect('/restaurantes/lista'))
         .then(() => res.send(req.body))
         .catch(err => console.log(err))
