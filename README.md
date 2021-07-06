@@ -17,7 +17,7 @@
 ***
 ```
 ID	    Path	                Description
-1	    /                         Index
+1	    /                           Index
 2	    /registro	                Registra nuevo usuario
 3	    /iniciar-sesión	        Inicio de sesión de usuario
 4	    /perfil                     Mi perfil
