@@ -34,9 +34,7 @@ router.post('/registrar', (req, res) => {
 })
 
 router.get('/detalles/:warehouse_id', (req, res) => {
-
     const { warehouse_id } = req.params
-
     Warehouse
         .findById(warehouse_id)
         .then(warehouse => res.render('warehouse/warehouse-details', warehouse))

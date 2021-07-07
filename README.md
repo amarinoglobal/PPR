@@ -47,3 +47,43 @@ $ git clone https://https://github.com/amarinoglobal/PPR/
 $ cd ../PPR
 $ npm install
 $ npm run dev
+
+
+***
+.class {
+  /* position */
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99; 
+  /* display */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* aspecto */
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0 0 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: red;
+  color: #F8F9FA;
+  opacity: 1;
+  /* tipo */
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  /* extras */
+  overflow: hidden;
+  transform: translate3d(0, 100%, 0);
+  transition: opacity .4s ease, transform .7s ease;
+  ***

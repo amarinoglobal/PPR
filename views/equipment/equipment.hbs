@@ -1,0 +1,30 @@
+<div class="container">
+
+    <h2>Equipamiento</h2> <a href="/equipamiento/registrar" class="btn btn-dark">Registrar nuevo envío</a>
+    <hr>
+
+    <div class="row">
+
+        {{#each equipment}}
+        <div class="col-6">
+
+            <h2 align="center"> {{name}}</h2>
+            <h2 align="center"> {{brand}}</h2>
+            <h2 align="center"> {{serie}}</h2>
+            <h2 align="center"> {{status}}</h2>
+            {{!-- <h2 align="center"> {{warehouse}}</h2> --}}
+            {{!-- <h2 align="center"> {{location}}</h2> --}}
+
+            <p align="center">
+                <a class="btn btn-dark" href="/equipamiento/detalles/{{id}}">Detalles</a>
+                <a class="btn btn-dark" href="/equipamiento/{{id}}/editar">Editar</a>
+                <a class="btn btn-dark" href="/equipamiento/borrar/{{id}}">Borrar</a>
+            </p>
+
+            <br><br><br><br>
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>
