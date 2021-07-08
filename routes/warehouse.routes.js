@@ -21,15 +21,15 @@ router.post('/registrar', (req, res) => {
 
     const { name, lat, lng } = req.body
 
-    if (lat && lng) {
-        const location = {
-            type: 'Point',
-            coordinates: [lat, lng]
-        }
-
-    } else {
-
+    // if (lat && lng) {
+    const location = {
+        type: 'Point',
+        coordinates: [lat, lng]
     }
+
+    // } else {
+
+    // }
     Warehouse
         .create({ name, owner: req.session.currentUser, location })
         .then(() => res.redirect('/almacenes'))
