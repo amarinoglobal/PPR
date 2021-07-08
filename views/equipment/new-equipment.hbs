@@ -11,50 +11,49 @@
             <form action="/equipamiento/registrar" method="POST">
 
                 <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="name" id="name">
+
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                    <label for="brand">Marca</label>
-                    <input type="text" class="form-control" name="brand" id="brand">
+
+                    <input type="text" class="form-control" name="brand" id="brand" placeholder="Modelo">
                 </div>
                 <div class="form-group">
-                    <label for="serie">Numero de serie</label>
-                    <input type="text" class="form-control" name="serie" id="serie">
+
+                    <input type="text" class="form-control" name="serie" id="serie" placeholder="Numero de serie">
                 </div>
                 <div class="form-group">
-                    <label for="description">Descripción</label>
-                    <input type="text" class="form-control" name="description" id="description">
+
+                    <input type="text" class="form-control" name="description" id="description"
+                        placeholder="Descripción">
                 </div>
-                {{!-- <div class="form-group">
-                    <label for="status">Status</label>
-                    <input type="text" class="form-control" name="status" id="status">
-                    OPERATIVO', 'ESTROPEADO', 'MANTENIMIENTO', 'EXTRAVIADO
-                </div> --}}
+
                 <div class="form-group">
-                    <label for="status">Status</label>
-                    <select name="status" id="status" class="form-control">
-                        <option>OPERATIVO</option>
-                        <option>ESTROPEADO</option>
-                        <option>MANTENIMIENTO</option>
-                        <option>EXTRAVIADO</option>
+
+                    <select name="status" id="status" class="form-control" placeholder="Status">
+                        <option disabled selected>Estado del equipo</option>
+                        <option value="OPERATIVO">OPERATIVO</option>
+                        <option value="ESTROPEADO">ESTROPEADO</option>
+                        <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+                        <option value="EXTRAVIADO">EXTRAVIADO</option>
 
                     </select>
                 </div>
-                <label for="warehouse">Almacen</label>
-                <select name="warehouse" id="warehouse" class="form-control">
-                    <option value="">Elige un almacen</option>
-                    {{#each warehouse}}
-                    <option value="{{id}}">{{name}}</option>
-                    {{/each}}
-                </select>
                 <div class="form-group">
-                    <label for="lng">longitud</label>
-                    <input type="text" class="form-control" name="lng" id="lng">
+                    <select name="warehouse" id="warehouse" class="form-control" placeholder="Almacen">
+                        <option disabled selected>Elige un Almacen</option>
+                        {{#each warehouse}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="lat">latitud</label>
-                    <input type="text" class="form-control" name="lat" id="lat">
+
+                    <input type="text" class="form-control" name="lng" id="lng" placeholder="Longitud">
+                </div>
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="lat" id="lat" placeholder="Latitud">
                 </div>
 
                 <button type="submit" class="btn btn-outline-dark btn-block btn-lg">Crear equipo</button>

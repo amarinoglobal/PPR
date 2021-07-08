@@ -65,7 +65,6 @@ router.post('/inicio-sesion', (req, res) => {
 
 router.get('/desconectar', (req, res) => {
 
-    req.flash('mensajeRegistro', 'Gracias por crear tu cuenta, ahora estas autentificado.');
     req.session.destroy(() => res.redirect('/'))
 });
 

@@ -11,27 +11,45 @@
             <form action="/envios/registrar" method="POST">
 
                 <div class="form-group">
-                    <label for="date">Fecha de envío</label>
-                    <input type="date" class="form-control" name="date" id="date">
+
+                    <input type="text" class="form-control" name="date" id="date" placeholder="Fecha de envio"
+                        onfocus="(this.type='date')">
                 </div>
                 <div class="form-group">
-                    <label for="warehouse">Reparto</label>
 
-                    <select name="warehouse" id="warehouse" class="form-control">
-                        <option value="">Almacen</option>
+                    <select name="status" id="status" class="form-control">
+                        <option value="">Estado de la solicitud de envio</option>
+                        <option>APROBADO</option>
+                        <option>PENDIENTE</option>
+                        <option>RECHAZADO</option>
+
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="warehouse" id="warehouse" class="form-control" placeholder="Almacen">
+                        <option disabled selected>Elige un Almacen</option>
                         {{#each warehouse}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="lat">Longitud</label>
-                    <input type="text" class="form-control" name="lat" id="lat">
+                    <select multiple name="equipment" id="equipment" class="form-control" placeholder="Equipos">
+                        <option disabled selected>Elige los equipos a enviar</option>
+                        {{#each equipment}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="lat" id="lat" placeholder="Longitud">
                 </div>
 
                 <div class="form-group">
-                    <label for="lng">Latitud</label>
-                    <input type="text" class="form-control" name="lng" id="lng">
+
+                    <input type="text" class="form-control" name="lng" id="lng" placeholder="Latitud">
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block btn-lg">Crear almacen</button>
 

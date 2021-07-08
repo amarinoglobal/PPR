@@ -34,3 +34,5 @@ shippingSchema.index({ location: '2dsphere' })
 const Shipping = mongoose.model('Shipping', shippingSchema);
 
 module.exports = Shipping;
+
+
