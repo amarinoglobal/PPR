@@ -38,6 +38,7 @@ router.get('/detalles/:equipment_id', (req, res) => {
     const { equipment_id } = req.params
     Equipment
         .findById(equipment_id)
+        .populate('warehouse')
         .then(equipment => res.render('equipment/equipment-details', equipment))
         .catch(err => console.log(err))
 })

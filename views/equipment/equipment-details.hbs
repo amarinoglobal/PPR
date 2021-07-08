@@ -6,7 +6,15 @@
 
     <div class="row">
         <div class="col-md-8">
-            <p><strong>Localización</strong></p>
+            <p><strong>Marca</strong>: {{brand}}</p>
+            <p><strong>Nº de serie</strong>: {{serie}}</p>
+            <p><strong>Descripción</strong>: {{description}}</p>
+            <p><strong>Estado</strong>: {{status}}</p>
+
+            <p><strong>Estado</strong>:{{#each warehouse}}{{name}}{{/each}}</p>
+
+
+
         </div>
         <div class="col-md-4">
 
@@ -18,7 +26,7 @@
 
     <hr>
     <div id="map"></div>
-    
+
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly"

@@ -13,7 +13,8 @@ const equipmentSchema = new Schema({
     description: String,
     status: {
         type: String,
-        enum: ['OPERATIVO', 'ESTROPEADO', 'MANTENIMIENTO', 'EXTRAVIADO']
+        enum: ['OPERATIVO', 'ESTROPEADO', 'MANTENIMIENTO', 'EXTRAVIADO'],
+        trim: true
     },
 
     warehouse: {
