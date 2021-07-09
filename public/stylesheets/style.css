@@ -23,7 +23,7 @@ h1 {
   padding: 0%;
   margin: 0%;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background-image: -webkit-linear-gradient(top, #00ccff 0%, #cecece 100%);
   background-image: -moz-linear-gradient(top, #00ccff 0%, #cecece 100%);
   background-image: -ms-linear-gradient(top, #00ccff 0%, #cecece 100%);
@@ -51,4 +51,8 @@ img {
 #myMap {
   height: 300px;
   background-color: rgb(255, 255, 255);
+}
+
+.icons {
+  padding-top: 200px;
 }

@@ -31,7 +31,7 @@ function getLocationsWarehouse(myMap) {
         .get('/api/placeWarehouse')
         .then(response => response.data.forEach(elm => {
             const newMarker = printMarker(elm.location, myMap)
-            printInformarker(elm.name, newMarker, myMap)
+            printInformarker2(elm.name, newMarker, myMap)
         }))
         .catch(err => console.log(err))
 }
@@ -49,6 +49,23 @@ function printMarker(location, myMap) {
 
 function printInformarker(name, brand, newMarker, myMap) {
     const contentString = "<h3>" + `${name}` + "</h3>" + "<br>" + `${brand}`
+
+    const infowindow = new google.maps.InfoWindow({
+        content: contentString
+    })
+
+    newMarker.addListener('click', () => {
+        infowindow.open({
+            anchor: newMarker,
+            map: myMap,
+            shouldFocus: false,
+        })
+    })
+}
+
+function printInformarker2(name, newMarker, myMap) {
+    const contentString = `<h2>Almacen:</h2>${name}`
+
 
     const infowindow = new google.maps.InfoWindow({
         content: contentString

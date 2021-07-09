@@ -34,18 +34,25 @@ router.post('/registrar', (req, res) => {
 
     const { date, status, equipment, warehouse, lng, lat } = req.body
 
-    // if (lat && lng) {
-    const location = {
-        type: 'Point',
-        coordinates: [lat, lng]
-    }
-    // } else {
+    if (lat && lng) {
+        const location = {
+            type: 'Point',
+            coordinates: [lat, lng]
+        }
+        Shipping
+            .create({ date, owner: req.session.currentUser, status, equipment, location })
+            .then(() => res.redirect('/envios'))
+            .catch(err => console.log(err))
 
-    // }
-    Shipping
-        .create({ date, owner: req.session.currentUser, status, equipment, warehouse, location })
-        .then(() => res.redirect('/envios'))
-        .catch(err => console.log(err))
+    }
+    else {
+        Shipping
+            .create({ date, owner: req.session.currentUser, status, equipment, warehouse })
+            .then(() => res.redirect('/envios'))
+            .catch(err => console.log(err))
+
+    }
+
 
 })
 
@@ -83,11 +90,35 @@ router.post('/:shipping_id/editar', (req, res) => {
         coordinates: [lat, lng]
     }
 
-    Equipment
+    Shipping
         .findByIdAndUpdate(shipping_id, { date, status, equipment, warehouse, location })
         .then(() => res.redirect('/envios'))
         .catch(err => console.log(err))
 
 })
+
+router.get('/detalles/:shipping_id', (req, res) => {
+
+    const { shipping_id } = req.params
+
+    Shipping
+        .findById(shipping_id)
+        .populate('warehouse')
+        .populate('equipment')
+        .then(shipping => res.render('shipping/shipping-details', shipping))
+        .catch(err => console.log(err))
+})
+
+router.get('/borrar/:shipping_id', (req, res) => {
+
+    const { shipping_id } = req.params
+
+    Shipping
+        .findByIdAndRemove(shipping_id)
+        .then(() => res.redirect('/almacenes'))
+        .catch(err => console.log(err))
+
+})
+
 
 module.exports = router
