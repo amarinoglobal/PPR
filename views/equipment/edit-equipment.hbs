@@ -4,52 +4,77 @@
 
         <div class="col-md-6">
 
-            <h1>Editar equipamiento</h1>
+            <h1>Editar equipo</h1>
 
             <hr>
 
-            <form action="/equipamiento/{{id}}/editar" method="POST">
+            <form action="/equipamiento/{{equipment.id}}/editar" method="POST">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" id="name" value="{{name}}"
-                        placeholder="Nombre equipamiento">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="brand" id="brand" value="{{brand}}"
-                        placeholder="Nombre equipamiento">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="serie" id="serie" value="{{serie}}"
-                        placeholder="Nombre equipamiento">
-                </div>
-                <select name="status" id="status" class="form-control">
-                    <option value="OPERATIVO">Almacen</option>
-                    <option value="">{{name}}</option>                   
-                </select>
-                <select name="warehouse" id="warehouse" class="form-control">
-                    <option value="">Almacen</option>
-                    {{#each warehouse}}
-                    <option value="{{id}}">{{name}}</option>
-                    {{/each}}
-                </select>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="lat" id="lat" value="{{location.coordinates.[0]}}"
-                        placeholder="Longitud">
+                    <input type="text" class="form-control" name="name" id="name" value="{{equipment.name}}">
                 </div>
 
-                <div class=" form-group">
-                    <input type="text" class="form-control" name="lng" id="lng" value="{{location.coordinates.[1]}}"
-                        placeholder="Latitud">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="brand" id="brand" value="{{equipment.brand}}">
                 </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="serie" id="serie" value="{{equipment.serie}}">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="description" id="description"
+                        value="{{equipment.description}}">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder=" Estado actual: {{equipment.status}}" disabled>
+
+                    <select name="status" id="status" class="form-control">
+                        <option value="{{equipment.status}}">Estado del equipo</option>
+                        <option value="OPERATIVO">OPERATIVO</option>
+                        <option value="ESTROPEADO">ESTROPEADO</option>
+                        <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+                        <option value="EXTRAVIADO">EXTRAVIADO</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" class="form-control" placeholder="Almacen actual: {{equipment.warehouse.name}}"
+                        disabled>
+
+                    <select name="warehouse" id="warehouse" class="form-control">
+                        <option value="{{equipment.warehouse.name}}">Elige un Almacen</option>
+                        {{#each warehouse}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lng" id="lng"
+                        value="{{equipment.location.coordinates.[0]}}">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lat" id="lat"
+                        value="{{equipment.location.coordinates.[1]}}">
+                </div>
+
                 <button type="submit" class="btn btn-outline-dark btn-block btn-lg">Guardar cambios</button>
 
             </form>
+
             {{#if errorMessage}}
             <div
-                style="margin-top: 20px; padding: 5px; color: white; background: rgb(247, 0, 0); text-align: center; font-size: .95em">
+                style="margin-top: 20px; padding: 5px; color: white; background: rgb(0, 94, 20); text-align: center; font-size: .95em">
                 {{errorMessage}}
             </div>
             {{/if}}
+
         </div>
 
     </div>

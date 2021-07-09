@@ -1,9 +1,7 @@
 const router = require("express").Router()
 const bcrypt = require('bcrypt')
-
 const User = require('./../models/User.model')
 
-// Signup
 router.get('/registro', (req, res) => res.render('auth/signup-page'))
 
 router.post('/registro', (req, res) => {
@@ -30,11 +28,9 @@ router.post('/registro', (req, res) => {
 
         })
         .catch(err => console.log(err))
+
 })
 
-
-
-// Login
 router.get('/inicio-sesion', (req, res) => res.render('auth/login-page'))
 
 router.post('/inicio-sesion', (req, res) => {
@@ -55,19 +51,15 @@ router.post('/inicio-sesion', (req, res) => {
                 return
             }
             req.session.currentUser = user
-            // console.log('Este es el objeto de sesión:', req.session)
             res.redirect('/')
         })
         .catch(err => console.log(err))
+
 })
-
-
 
 router.get('/desconectar', (req, res) => {
 
     req.session.destroy(() => res.redirect('/'))
 });
-
-
 
 module.exports = router

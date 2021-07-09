@@ -1,8 +1,11 @@
 <div class="container">
 
     <h2>Almacenes</h2> <a href="/almacenes/registrar" class="btn btn-dark">Registrar nuevo almacen</a>
+
     <hr>
+
     <div id="myMap"></div>
+
     <div class="row">
 
         {{#each warehouse}}
@@ -10,24 +13,22 @@
 
             <h2 align="center"> {{name}}</h2>
 
-
             <p align="center">
                 <a class="btn btn-dark" href="/almacenes/detalles/{{id}}">Detalles</a>
                 <a class="btn btn-dark" href="/almacenes/{{id}}/editar">Editar</a>
                 <a class="btn btn-dark" href="/almacenes/borrar/{{id}}">Borrar</a>
             </p>
             <br><br><br><br>
+
         </div>
         {{/each}}
+
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/place-map.js"></script>
-
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5VxvaW_K6dDYxVB5rZjgrisdAaXwKD10&callback=initMapWarehouse"
         async></script>
-
 
 </div>

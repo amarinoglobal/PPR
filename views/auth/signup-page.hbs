@@ -13,9 +13,11 @@
                 <div class="form-group">
                     <input type="email" class="form-control" name="username" id="username" placeholder="Usuario">
                 </div>
+
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Nombre">
                 </div>
+
                 <div class="form-group">
                     <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellidos">
                 </div>
@@ -31,30 +33,32 @@
                         <option>DNI</option>
                         <option>NIE</option>
                         <option>NIF</option>
-
-
                     </select>
+
                 </div>
+
                 <div class="form-group">
                     <input type="text" class="form-control" name="nid" id="nid"
                         placeholder="Numero de documento de identidad">
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="profileIMG" id="profileIMG"
-                        placeholder="URL Imagen de perfil">
+
+                <div class="form-group ">
+                    <label class="btn btn-default form-group">
+                        Browse <input type="file" hidden>
+                    </label>
                 </div>
-                {{!-- /*meter la imagen desde la base de datos*/ --}}
-
-
 
                 <button type="submit" class="btn btn-outline-dark btn-block btn-lg">Registrarme</button>
 
             </form>
+
             {{#if errorMessage}}
             <div
-                style="margin-top: 20px; padding: 5px; color: white; background: red; text-align: center; font-size: .95em">
-                {{errorMessage}}</div>
+                style="margin-top: 20px; padding: 5px; color: white; background: rgb(0, 94, 20); text-align: center; font-size: .95em">
+                {{errorMessage}}
+            </div>
             {{/if}}
+
         </div>
 
     </div>

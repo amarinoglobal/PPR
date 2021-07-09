@@ -1,8 +1,13 @@
 <div class="container">
 
-    <h2>Equipamiento</h2> <a href="/equipamiento/registrar" class="btn btn-dark">Registrar nuevo envío</a>
+    <h2>Equipamiento</h2>
+
+    <a href="/equipamiento/registrar" class="btn btn-dark">Registrar nuevo equipo</a>
+
     <hr>
+
     <div id="myMap"></div>
+
     <div class="row">
 
         {{#each equipment}}
@@ -24,15 +29,12 @@
             <br><br><br><br>
         </div>
         {{/each}}
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/place-map.js"></script>
-
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5VxvaW_K6dDYxVB5rZjgrisdAaXwKD10&callback=initMap"
         async></script>
-
 
 </div>

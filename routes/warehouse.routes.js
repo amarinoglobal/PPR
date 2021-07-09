@@ -2,9 +2,6 @@ const router = require("express").Router()
 const User = require('./../models/User.model')
 const Warehouse = require('./../models/Warehouse.model')
 const { checkLoggedUser, checkRoles } = require('./../middleware')
-// const bcrypt = require('bcrypt')
-
-//Register Warehouse
 
 router.get('/', (req, res, next) => {
 
@@ -18,18 +15,13 @@ router.get('/registrar', checkLoggedUser, (req, res) => res.render('warehouse/ne
 
 router.post('/registrar', (req, res) => {
 
-
     const { name, lat, lng } = req.body
 
-    // if (lat && lng) {
     const location = {
         type: 'Point',
         coordinates: [lat, lng]
     }
 
-    // } else {
-
-    // }
     Warehouse
         .create({ name, owner: req.session.currentUser, location })
         .then(() => res.redirect('/almacenes'))
@@ -38,11 +30,14 @@ router.post('/registrar', (req, res) => {
 })
 
 router.get('/detalles/:warehouse_id', (req, res) => {
+
     const { warehouse_id } = req.params
+
     Warehouse
         .findById(warehouse_id)
         .then(warehouse => res.render('warehouse/warehouse-details', warehouse))
         .catch(err => console.log(err))
+
 })
 
 router.get('/:warehouse_id/editar', (req, res) => {
@@ -52,9 +47,7 @@ router.get('/:warehouse_id/editar', (req, res) => {
     Warehouse
         .findById(warehouse_id)
         .then(warehouse => res.render('warehouse/edit-warehouse', warehouse))
-
         .catch(err => console.log(err))
-
 
 })
 
@@ -72,6 +65,7 @@ router.post('/:warehouse_id/editar', (req, res) => {
         .findByIdAndUpdate(warehouse_id, { name, lat, lng })
         .then(() => res.redirect('/almacenes'))
         .catch(err => console.log(err))
+
 })
 
 router.get('/borrar/:warehouse_id', (req, res) => {
@@ -82,11 +76,7 @@ router.get('/borrar/:warehouse_id', (req, res) => {
         .findByIdAndRemove(warehouse_id)
         .then(() => res.redirect('/almacenes'))
         .catch(err => console.log(err))
+
 })
-
-
-
-
-
 
 module.exports = router

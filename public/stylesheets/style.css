@@ -1,65 +1,11 @@
-
-/*@import url(//db.onlinewebfonts.com/c/2c9987468cbccf69153556019b8c5a94?family=FK+Grotesk+Monospaced);
-@font-face {font-family: "FK Grotesk Monospaced"; src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot"); src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff") format("woff"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.svg#FK Grotesk Monospaced") format("svg"); }
-
-body {
-  padding: 50px;
- font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
-
-footer {
-    background-color: #F8F9FA;
-    text-align: left;
-    font-size: 1em;
-    color: #1d1b1b;
-    padding: 10px 0;
-    padding-left: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
-
-img{
-
-width: 70%;
-
-}
- Always set the map height explicitly to define the size of the div
-        element that contains the map.
-#map {
-  height: 100%;
-}
-
-/* Optional: Makes the sample page fill the window. 
-
-
-/* form input {
-  border: 0 !important;
-  border-bottom: 1px solid #1d1b1b !important;
-  border-radius: 0 !important;
-  background: none !important;
-  padding: 0 !important;
-  padding-bottom: 0px !important;
-  outline: none !important;
-} */
-
 @import url(//db.onlinewebfonts.com/c/2c9987468cbccf69153556019b8c5a94?family=FK+Grotesk+Monospaced);
-@font-face {font-family: "FK Grotesk Monospaced"; src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot"); src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff") format("woff"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.svg#FK Grotesk Monospaced") format("svg"); }
+@font-face {
+  font-family: "FK Grotesk Monospaced";
+  src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot");
+  src: url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.woff") format("woff"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2c9987468cbccf69153556019b8c5a94.svg#FK Grotesk Monospaced") format("svg");
+}
 
-
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -73,42 +19,36 @@ h1 {
   color: 15px;
 }
 
-.slides{
+.slides {
   padding: 0%;
   margin: 0%;
   width: 100%;
-  height:500px;
+  height: 500px;
   background-image: -webkit-linear-gradient(top, #00ccff 0%, #cecece 100%);
-  background-image: -moz-linear-gradient(top, #FF5A00 0%, #FFAE00 100%);
-  background-image: -ms-linear-gradient(top, #FF5A00 0%, #FFAE00 100%);
-  background-image: -o-linear-gradient(top, #FF5A00 0%, #FFAE00 100%);
-  background-image: linear-gradient(top, #FF5A00 0%, #FFAE00 100%);
+  background-image: -moz-linear-gradient(top, #00ccff 0%, #cecece 100%);
+  background-image: -ms-linear-gradient(top, #00ccff 0%, #cecece 100%);
+  background-image: -o-linear-gradient(top, #00ccff 0%, #cecece 100%);
+  background-image: linear-gradient(top, #00ccff 0%, #cecece 100%);
 }
 
 footer {
-    background-color: #F8F9FA;
-    text-align: left;
-    font-size: 1em;
-    color: #1d1b1b;
-    padding: 10px 0;
-    padding-left: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+  background-color: #F8F9FA;
+  text-align: left;
+  font-size: 1em;
+  color: #1d1b1b;
+  padding: 10px 0;
+  padding-left: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
 
-img{
-
-width: 70%;
-
+img {
+  width: 70%;
 }
+
 #myMap {
   height: 300px;
-  background-color: red;
+  background-color: rgb(255, 255, 255);
 }
-
-
-
-
-
